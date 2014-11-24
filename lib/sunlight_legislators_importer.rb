@@ -1,9 +1,13 @@
 require 'csv'
 require_relative '../app/models/legislator'
+require_relative '../app/models/rep'
+require_relative '../app/models/sen'
+require_relative '../app/models/del'
+require_relative '../app/models/com'
 
 class SunlightLegislatorsImporter
   def self.import(filename=File.dirname(__FILE__) + "/../db/data/legislators.csv")
-  wanted_columns = ["title", "firstname", "middlename", "lastname", "party", "state", "in_office", "gender", "phone", "fax", "website", "webform", "twitter_id", "birthdate"]
+  wanted_columns = ["type", "firstname", "middlename", "lastname", "party", "state", "in_office", "gender", "phone", "fax", "website", "webform", "twitter_id", "birthdate"]
 
     csv = CSV.new(File.open(filename), :headers => true)
     csv.each do |row|

@@ -1,0 +1,3 @@
+class Com < Legislator
+
+end

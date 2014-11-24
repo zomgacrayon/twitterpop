@@ -1,0 +1,3 @@
+class Del < Legislator
+
+end
